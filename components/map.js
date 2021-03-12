@@ -57,12 +57,16 @@ export default function Map() {
       if (!features.length) return;
       const feature = features[0];
       console.log(feature);
-      const popup = new mapbox.Popup({ offset: [0, -15] })
+      new mapbox.Popup({
+        offset: [0, -15],
+        className: css.popup,
+        closeButton: false,
+        maxWidth: 'none',
+      })
         .setLngLat(e.lngLat)
         .setHTML(
-          `<h3>${feature.properties.neighborhood}</h3>
-          <br/>
-          <p>${feature.properties.borough}</p>`
+          `<h3 class=${css.popupText}>${feature.properties.neighborhood}</h3>
+          <p class=${css.popupText}>${feature.properties.borough}</p>`
         )
         .addTo(map);
     });

@@ -18,3 +18,17 @@
   margin: 12px;
   border-radius: 4px;
 }
+
+.popup {
+  text-align: center;
+  height: fit-content;
+  min-width: 15vh;
+}
+
+.mapboxgl-popup-content {
+  padding: 5% 1%;
+}
+
+.popupText {
+  margin: 0;
+}
